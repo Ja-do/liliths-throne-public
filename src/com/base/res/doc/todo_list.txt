@@ -19,37 +19,69 @@
 	
 	Patch notes:
 		
-	Clothing:
-		<b>Added:</b> Headband (No femininity requirements, head slot). Also added a 'headband with bow' variant (feminine, head slot).
-		<b>Added:</b> Long-sleeved dress (feminine, torso slot).
-		<b>Added:</b> Shin guards (No femininity requirements, ankle slot).
-		<b>Added:</b> Stomach sarashi (No femininity requirements, stomach slot).
-		<b>Added:</b> Chest sarashi (No femininity requirements, chest slot).
+	Gameplay:
+		<b>Changed:</b> Split up anal, oral, and breast fetishes into giving and receiving variants, with associated tease attacks.
+		<b>Added:</b> A lore book for each of the game's races, which have a chance to be randomly dropped as loot after combat.
+		Added Lilaya's Library text, as well as entries for the new lore books (once they've been found).
+		
+	Sex:
+		<b>Added:</b> Dominant kneeling position (for both player and NPCs).
+		
+	UI:
+		Made perks slightly easier to distinguish between owned and unowned. (I'm going to do a big rework of this screen soon.)
 		
 	Other:
-		Removed harpy height limitation. (This was a left over from a very early version of the game.)
-		Slightly increased the arousal reduction on 'Calm down' action.
-		Humans now have a chance to drop Vanilla Water.
-		There is now a chance for NPCs to have three fetishes. (20% chance for three, 20% chance for two, 40% chance for one, 20% chance for none)
-		Added 'Permit/Forbid self clothing' actions in sex, to allow you to forbid your partner from managing any of their own clothes.
-		Vicky now stocks a lot more essences.
-		Rare clothing should now be spawning in correctly (10% chance for every random piece of clothing to have a rare enchantment).
+		Fetishes have been slightly reworked. Instead of the first fetish being free, you now start the game with 5 arcane essences. Fetishes that unlock content (Transformation and Non-con fetishes) are free.
+		Renamed 'City gym' to 'Pix's Playground'.
+		Improved dialogue flow in all of the shops in the Shopping Arcane. (They now all have an 'exterior' scene.)
+		Split encyclopedia entries for race into 'basic' and 'advanced' knowledge. You gain basic knowledge upon encountering a race, and advanced knowledge upon reading a book about that race.
 		
 	Bugs:
-		Fixed bug where almost everyone would resist if you have the non-con fetish.
-		Minor typo fixes.
-		Fixed several old bugs from the sex system rework (could have been causing orifice stretching issues).
-		Fixed bug where fathered daughters wouldn't count in the pregnancy stats screen.
-		Fixed offspring description giving incorrect mother/father name.
-		Fixed Harpy Perfume tooltip incorrect effect description.
-		After meeting your offspring, their name should now correctly change from 'Unknown' in the pregnancy stats screen.
-		Added NPC variants for consuming Mother's Milk, Promiscuity Pills, and Vixen's Virility.
+		Fixed some typos.
+		Fixed some incorrect penis descriptions in doggy-style orgasm scenes.
+		You now correctly start with 40 flames if you skip prologue.
 	
 	
 	
 	
 	
 	
+	
+	
+	
+	SABraxDom????
+	
+	(+ remove fetishes)
+	
+	
+	AI in sex, PLEASE FIX :3
+	
+	Dominant kneeling
+		 (+ tit fucking)
+		 + nipple fucking
+		Request nipple penetration
+	
+	Bug fixes
+	
+	
+	Clothing enchanting
+	
+	Incest - Romance & slavery
+	
+	
+	Fix this! >:3
+	You don't know what their nipples look like since you've never seen them before" showing up when nipples are exposed fixed itself yet
+	
+	
+	NPCs with the non-con fetish shouldn't have lowered arousal gain when you rape them
+	
+	Buy all not showing up
+	
+	 in the first turn of sex, my orifices are dry, even though they're described as being so wet they perpetually drip everywhere
+	
+	Arm wraps
+	
+	Tooltip persisting on window switch
 	
 	Regarding my suggestion of changing stats to different names (so you don't have strength or fitness, which don't have any bearing on the player's appearance), coming up with names for new stats that make sense was fairly easy.  They can be things like 'force of personality' or 'self-control', things which make a lot of sense to influence how good you are with magic and how strong your aura is.  That gives you a set of combat stats that then don't have any bearing on your appearance.
 	The snag I actually ran into is actually the special attacks that various body types and transformations give you, abilities that are obviously not derived from magic at all.  It wouldn't be too hard to change enemies up so that they don't attack you directly, instead using magic to hit your aura, but those special attacks would have to be completely redone since it doesn't make a whole lot of sense for claws to give you a new spell that you can't get otherwise.
@@ -61,7 +93,31 @@
 	
 	Brax dom not using proper actions?
 	
+	
+	
+	
+	-Child race is determined as one of the parent's dominant race (50/50 of player or partner's race, perks determine if player is more or less likely)
+	-Child's furriness rating is determined to be something between the parent's furriness (random, average, or based on player choice of which)
+	-Furriness is same as furry preference settings.
+	-Humans are essentially all races with no furriness, so their race is ignored when determining what race the child will have (only if the child's furriness is 0 are they human)
+	-The gender of the child is determined based on a mix of the natural birth rates for their race and the player's gender preferences, based on a setting chosen in the gender preference menu.  The options are:
+	--All natural births (children are always the natural genders, ex: humans are 50% male and 50% female, harpies are 50% traps and 50% female)
+	--Some preferred births (children are mostly natural genders, with a 10-33% chance to instead follow the player's gender preferences)
+	--Natural preferred births (children are always natural genders, but will follow the player's gender preferences when possible, ex: if either male or female are enabled, the split will be based on the players gender preferences, otherwise it's the default)
+	--All preferred births (children's genders are always based on the player's gender preferences)
+	
+	{
 	Gender prefs aren't being applied to offspring.
+	-Natural birth only (all children are born based on their race's natural birth rates only, human 50% male/50% female, harpy 50% trap / 50% female)
+	-Rare unusual births (most children are born with natural genders, but unusual ones have a small chance to trigger)
+	-Natural preferred births (all children are born with natural birth genders, but will respect the player's gender preferences when possible)
+	-All births preferred (children will use the player's gender preference sheet)
+	}
+	
+	
+	
+	
+	
 	
 	Randomise succubi a bit more
 	

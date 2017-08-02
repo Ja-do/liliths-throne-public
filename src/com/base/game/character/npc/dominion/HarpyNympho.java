@@ -40,16 +40,16 @@ public class HarpyNympho extends NPC {
 		super(new NameTriplet("Lexi"),
 				"One of the more notable harpy matriarchs, Lexi is the leader of a flock of harpies."
 						+ " Either due to her obsession with sex, or perhaps because she's not as cruel as a typical harpy, Lexi is far more accepting of males than a typical matriarch."
-						+ " As a result, her flock serves as her personal harem; it's members constantly trying to sate their matriarchs never-ending lust.",
+						+ " As a result, her flock serves as her personal harem; it's members constantly trying to sate their matriarch's never-ending lust.",
 				7, Gender.FEMALE, RacialBody.HARPY, RaceStage.LESSER,
 				new CharacterInventory(30), WorldType.HARPY_NEST, HarpyNests.HARPY_NEST_PINK, true);
 
 		this.setSexualOrientation(SexualOrientation.AMBIPHILIC);
 
 		this.addFetish(Fetish.FETISH_CUM_ADDICT);
-		this.addFetish(Fetish.FETISH_ANAL);
-		this.addFetish(Fetish.FETISH_ORAL);
-		this.addFetish(Fetish.FETISH_BREASTS);
+		this.addFetish(Fetish.FETISH_ANAL_RECEIVING);
+		this.addFetish(Fetish.FETISH_ORAL_GIVING);
+		this.addFetish(Fetish.FETISH_BREASTS_SELF);
 		this.addFetish(Fetish.FETISH_EXHIBITIONIST);
 		
 		this.setEyeColour(Colour.EYE_GREEN);

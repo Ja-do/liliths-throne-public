@@ -166,7 +166,7 @@ public class HarpyNestDominant {
 						+ "</p>"
 						+ "<p>"
 							+ "Jumping down off of her podium, [harpyDominant.name] falls to her knees before you."
-							+ " Noticing what's going on, [harpyDominantComapnion.name] lets out a little squeak, and, pulling out of her fuck-toy, jumps down onto her knees beside her matriarch."
+							+ " Noticing what's going on, [harpyDominantCompanion.name] lets out a little squeak, and, pulling out of her fuck-toy, jumps down onto her knees beside her matriarch."
 							+ " Shuffling forwards, [harpyDominant.Name] bows her head, before asking,"
 							+ " [harpyDominant.speech(What can I do for you "+(Main.game.getPlayer().isFeminine()?"Mistress":"Master")+"?!)]"
 						+ "</p>";
@@ -509,7 +509,7 @@ public class HarpyNestDominant {
 					+ "</p>"
 					+ "<p>"
 						+ "You can't help but let out a mocking laugh as the matriarch submits to you."
-						+ " Having the choice between building up a new flock, or submitting to your rule, [harpyDominantCompanion.name] has obviously chosen the latter, and you reward her obedience by telling her what she wants to hear,"
+						+ " Having the choice between building up a new flock, or submitting to your rule, [harpyDominant.name] has obviously chosen the latter, and you reward her obedience by telling her what she wants to hear,"
 						+ " [pc.speech(Good girl! You'll do exactly as I say from now on, understood?!)]"
 					+ "</p>"
 					+ "<p>"

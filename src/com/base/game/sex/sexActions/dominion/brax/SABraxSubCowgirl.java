@@ -305,18 +305,18 @@ public class SABraxSubCowgirl {
 		@Override
 		public List<Fetish> getFetishesPlayer() {
 			if(Main.game.getPlayer().hasStatusEffect(StatusEffect.CREAMPIE_VAGINA)) {
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_CUM_STUD));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL_RECEIVING), new ListValue<>(Fetish.FETISH_CUM_STUD));
 			} else {
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL_RECEIVING));
 			}
 		}
 		
 		@Override
 		public List<Fetish> getFetishesPartner() {
 			if(Main.game.getPlayer().hasStatusEffect(StatusEffect.CREAMPIE_VAGINA)) {
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_SUBMISSIVE), new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_CUM_ADDICT));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_SUBMISSIVE), new ListValue<>(Fetish.FETISH_ORAL_GIVING), new ListValue<>(Fetish.FETISH_CUM_ADDICT));
 			} else {
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_SUBMISSIVE), new ListValue<>(Fetish.FETISH_ORAL));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_SUBMISSIVE), new ListValue<>(Fetish.FETISH_ORAL_GIVING));
 			}
 		}
 	};
@@ -392,18 +392,18 @@ public class SABraxSubCowgirl {
 		@Override
 		public List<Fetish> getFetishesPlayer() {
 			if(Main.game.getPlayer().hasStatusEffect(StatusEffect.CREAMPIE_ANUS)) {
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_ANAL), new ListValue<>(Fetish.FETISH_CUM_STUD));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL_RECEIVING), new ListValue<>(Fetish.FETISH_ANAL_RECEIVING), new ListValue<>(Fetish.FETISH_CUM_STUD));
 			} else {
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_ANAL));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL_RECEIVING), new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 			}
 		}
 		
 		@Override
 		public List<Fetish> getFetishesPartner() {
 			if(Main.game.getPlayer().hasStatusEffect(StatusEffect.CREAMPIE_ANUS)) {
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_SUBMISSIVE), new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_ANAL), new ListValue<>(Fetish.FETISH_CUM_ADDICT));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_SUBMISSIVE), new ListValue<>(Fetish.FETISH_ORAL_GIVING), new ListValue<>(Fetish.FETISH_ANAL_GIVING), new ListValue<>(Fetish.FETISH_CUM_ADDICT));
 			} else {
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_SUBMISSIVE), new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_ANAL));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_SUBMISSIVE), new ListValue<>(Fetish.FETISH_ORAL_GIVING), new ListValue<>(Fetish.FETISH_ANAL_GIVING));
 			}
 		}
 	};
@@ -439,7 +439,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL_RECEIVING));
 		}
 	};
 	
@@ -474,7 +474,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_ANAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL_RECEIVING), new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 		}
 	};
 	
@@ -522,7 +522,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL_RECEIVING));
 		}
 	};
 	
@@ -558,7 +558,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_ANAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ORAL_RECEIVING), new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 		}
 	};
 
@@ -593,7 +593,7 @@ public class SABraxSubCowgirl {
 
 			UtilText.nodeContentSB.append("Reaching down and taking hold of the "+Sex.getPartner().getPenisName(true)+" beneath you, you shuffle around until it's lined up to your "+Main.game.getPlayer().getVaginaName(true)+"."
 					+ " Not wasting another moment, you quickly sink down, feeling the tapered end of Brax's "+Sex.getPartner().getPenisName(true)+" easily slide into you."
-					+ " With a desperate wail, you sink down, stuffing more and more of the radily widening shaft into your "+Main.game.getPlayer().getVaginaName(true)
+					+ " With a desperate wail, you sink down, stuffing more and more of the readily widening shaft into your "+Main.game.getPlayer().getVaginaName(true)
 					+", until at last, with a quiver of delight, you feel the swollen knot at the base bump against your pussy lips.");
 
 			return UtilText.nodeContentSB.toString();
@@ -631,7 +631,7 @@ public class SABraxSubCowgirl {
 
 			UtilText.nodeContentSB.append("Reaching down and taking hold of the "+Sex.getPartner().getPenisName(true)+" beneath you, you shuffle around until it's lined up to your "+Main.game.getPlayer().getAssholeName(true)+"."
 					+ " Not wasting another moment, you quickly sink down, feeling the tapered end of Brax's "+Sex.getPartner().getPenisName(true)+" slide into you."
-					+ " With a desperate wail, you sink down, stuffing more and more of the radily widening shaft into your "+Main.game.getPlayer().getAssholeName(true)
+					+ " With a desperate wail, you sink down, stuffing more and more of the readily widening shaft into your "+Main.game.getPlayer().getAssholeName(true)
 					+", until at last, with a quiver of delight, you feel the swollen knot at the base bump against your "+Main.game.getPlayer().getAssholeName(true)+".");
 
 			return UtilText.nodeContentSB.toString();
@@ -639,7 +639,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ANAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 		}
 	};
 	
@@ -807,7 +807,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_BREASTS));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_BREASTS_SELF));
 		}
 	};
 	
@@ -875,7 +875,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ANAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 		}
 	};
 	
@@ -1202,7 +1202,7 @@ public class SABraxSubCowgirl {
 
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ORAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ORAL_RECEIVING));
 		}
 	};
 	
@@ -1237,7 +1237,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ORAL), new ListValue<>(Fetish.FETISH_ANAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ORAL_RECEIVING), new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 		}
 	};
 	
@@ -1302,7 +1302,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ANAL));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 		}
 		
 	};
@@ -1465,7 +1465,7 @@ public class SABraxSubCowgirl {
 		
 		@Override
 		public List<Fetish> getFetishesPlayer() {
-			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_BREASTS));
+			return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_BREASTS_SELF));
 		}
 	};
 	
@@ -1913,7 +1913,7 @@ public class SABraxSubCowgirl {
 			if (Sex.getPenetrationTypeInOrifice(OrificeType.VAGINA_PLAYER)!=null)
 				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_PREGNANCY));
 			else if (Sex.getPenetrationTypeInOrifice(OrificeType.ANUS_PLAYER)!=null)
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ANAL));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 			else
 				return null;
 		}
@@ -2336,7 +2336,7 @@ public class SABraxSubCowgirl {
 			if (Sex.getPenetrationTypeInOrifice(OrificeType.VAGINA_PLAYER)!=null)
 				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_PREGNANCY));
 			else if (Sex.getPenetrationTypeInOrifice(OrificeType.ANUS_PLAYER)!=null)
-				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ANAL));
+				return Util.newArrayListOfValues(new ListValue<>(Fetish.FETISH_DOMINANT), new ListValue<>(Fetish.FETISH_ANAL_RECEIVING));
 			else
 				return null;
 		}

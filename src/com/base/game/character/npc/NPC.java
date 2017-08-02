@@ -183,7 +183,9 @@ public abstract class NPC extends GameCharacter {
 	}
 	
 	public List<AbstractCoreItem> getLootItems() {
-		if(Math.random() < 0.66) {
+		double rnd = Math.random();
+		
+		if(rnd <= 0.7) {
 			switch(getRace()) {
 				case CAT_MORPH:
 					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.INT_INGREDIENT_FELINE_FANCY)));
@@ -194,7 +196,7 @@ public abstract class NPC extends GameCharacter {
 				case WOLF_MORPH:
 					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.STR_INGREDIENT_WOLF_WHISKEY)));
 				case HUMAN:
-					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.DYE_BRUSH)));
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.INT_INGREDIENT_VANILLA_WATER)));
 				case ANGEL:
 					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.DYE_BRUSH)));
 				case DEMON:
@@ -205,6 +207,28 @@ public abstract class NPC extends GameCharacter {
 					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.DYE_BRUSH)));
 			}
 			
+		} else if(rnd <= 0.8 && !Main.game.getPlayer().getRacesAdvancedKnowledge().contains(getRace())) {
+			switch(getRace()) {
+				case CAT_MORPH:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.BOOK_CAT_MORPH)));
+				case DOG_MORPH:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.BOOK_DOG_MORPH)));
+				case HORSE_MORPH:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.BOOK_HORSE_MORPH)));
+				case WOLF_MORPH:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.BOOK_WOLF_MORPH)));
+				case HUMAN:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.BOOK_HUMAN)));
+				case ANGEL:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.DYE_BRUSH)));
+				case DEMON:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.BOOK_DEMON)));
+				case HARPY:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.BOOK_HARPY)));
+				case SLIME:
+					return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.DYE_BRUSH)));
+			}
+		
 		} else {
 			switch(getRace()) {
 				case CAT_MORPH:
@@ -228,7 +252,7 @@ public abstract class NPC extends GameCharacter {
 			}
 		}
 		
-		return null;
+		return Util.newArrayListOfValues(new ListValue<>(ItemType.generateItem(ItemType.DYE_BRUSH)));
 	}
 	
 	public Map<TFEssence, Integer> getLootEssenceDrops() {
@@ -289,24 +313,24 @@ public abstract class NPC extends GameCharacter {
 		// Doggy, kneeling, 69, wall back, wall front
 		
 		if(Sex.isPlayerDom()) { // These are irrelevant, as the player can always choose what to do if they're the dom:
-			if(hasFetish(Fetish.FETISH_ORAL) && canUseMouth()) {
+			if(hasFetish(Fetish.FETISH_ORAL_GIVING) && canUseMouth()) {
 				sexPositionPreferences.add(SexPosition.KNEELING_PARTNER_PERFORMING_ORAL);
 				sexPositionPreferences.add(SexPosition.SIXTY_NINE_PLAYER_TOP);
 			}
 			
-			if(this.hasFetish(Fetish.FETISH_ANAL) && canUseAnus()) {
+			if(this.hasFetish(Fetish.FETISH_ANAL_RECEIVING) && canUseAnus()) {
 				sexPositionPreferences.add(SexPosition.DOGGY_PARTNER_ON_ALL_FOURS);
-				sexPositionPreferences.add(SexPosition.FACING_WALL_PLAYER_BEHIND);
+				sexPositionPreferences.add(SexPosition.FACING_WALL_PARTNER);
 			}
 			
 			if(this.hasFetish(Fetish.FETISH_PREGNANCY) && canUseVagina()) {
 				sexPositionPreferences.add(SexPosition.DOGGY_PARTNER_ON_ALL_FOURS);
-				sexPositionPreferences.add(SexPosition.FACING_WALL_PLAYER_BEHIND);
-				sexPositionPreferences.add(SexPosition.BACK_TO_WALL_PLAYER_IN_CHARGE);
+				sexPositionPreferences.add(SexPosition.FACING_WALL_PARTNER);
+				sexPositionPreferences.add(SexPosition.BACK_TO_WALL_PARTNER);
 			}
 
 			if(this.hasFetish(Fetish.FETISH_IMPREGNATION) && canUsePenis()) {
-				sexPositionPreferences.add(SexPosition.BACK_TO_WALL_PLAYER_IN_CHARGE);
+				sexPositionPreferences.add(SexPosition.BACK_TO_WALL_PARTNER);
 			}
 			
 			if(getRace()==Race.DOG_MORPH || getRace()==Race.WOLF_MORPH) {
@@ -314,7 +338,7 @@ public abstract class NPC extends GameCharacter {
 			}
 			
 		} else { // Taking into account partner and player body parts and accessibility:
-			if(hasFetish(Fetish.FETISH_ORAL)) {
+			if(hasFetish(Fetish.FETISH_ORAL_RECEIVING)) {
 				if(playerCanUseMouth() && (canUsePenis() || canUseVagina())) {
 					sexPositionPreferences.add(SexPosition.KNEELING_PLAYER_PERFORMING_ORAL);
 				}
@@ -324,19 +348,23 @@ public abstract class NPC extends GameCharacter {
 				}
 			}
 			
-			if(hasFetish(Fetish.FETISH_ANAL) && canUsePenis() && playerCanUseAnus()) {
+			if(hasFetish(Fetish.FETISH_ORAL_GIVING) && canUseMouth()) {
+				sexPositionPreferences.add(SexPosition.KNEELING_PARTNER_PERFORMING_ORAL);
+			}
+			
+			if(hasFetish(Fetish.FETISH_ANAL_GIVING) && canUsePenis() && playerCanUseAnus()) {
 				sexPositionPreferences.add(SexPosition.DOGGY_PLAYER_ON_ALL_FOURS);
-				sexPositionPreferences.add(SexPosition.FACING_WALL_PARTNER_BEHIND);
+				sexPositionPreferences.add(SexPosition.FACING_WALL_PLAYER);
 			}
 			
 			if(this.hasFetish(Fetish.FETISH_IMPREGNATION) && canUsePenis() && playerCanUseVagina()) {
 				sexPositionPreferences.add(SexPosition.DOGGY_PLAYER_ON_ALL_FOURS);
-				sexPositionPreferences.add(SexPosition.FACING_WALL_PARTNER_BEHIND);
-				sexPositionPreferences.add(SexPosition.BACK_TO_WALL_PARTNER_IN_CHARGE);
+				sexPositionPreferences.add(SexPosition.FACING_WALL_PLAYER);
+				sexPositionPreferences.add(SexPosition.BACK_TO_WALL_PLAYER);
 			}
 			
 			if(this.hasFetish(Fetish.FETISH_PREGNANCY) && playerCanUsePenis() && canUseVagina()) {
-				sexPositionPreferences.add(SexPosition.BACK_TO_WALL_PARTNER_IN_CHARGE);
+				sexPositionPreferences.add(SexPosition.BACK_TO_WALL_PLAYER);
 			}
 			
 			if((getRace()==Race.DOG_MORPH || getRace()==Race.WOLF_MORPH) && canUsePenis() && canUseVagina()) {
@@ -1414,7 +1442,7 @@ public abstract class NPC extends GameCharacter {
 								return UtilText.returnStringAtRandom(
 										"That's right slut, take my cock! Your pussy belongs to me!",
 										"What a horny bitch! Take my cock you slut!",
-										"You feel that, fuck toy?! My cock sinking deep into your slutty little cunt?!");
+										"You feel that, fuck toy?! Do you feel my  cock sinking deep into your slutty little cunt?!");
 							case SUB_EAGER:
 								return UtilText.returnStringAtRandom(
 										"Yes! Use my cock! I love your pussy!",
@@ -1452,7 +1480,7 @@ public abstract class NPC extends GameCharacter {
 								return UtilText.returnStringAtRandom(
 										"That's right slut, feel my [npc.tail] pushing deep into your worthless little cunt! Your pussy belongs to me!",
 										"What a horny bitch! Now moan for me as I fuck you with my tail!",
-										"You feel that fuck toy?! My [npc.tail] sinking deep into your slutty little cunt?!");
+										"You feel that, fuck toy?! Do you feel my  [npc.tail] sinking deep into your slutty little cunt?!");
 							case SUB_EAGER:
 								return UtilText.returnStringAtRandom(
 										"Yes! Use my [npc.tail]! I love your pussy!",
@@ -1592,7 +1620,7 @@ public abstract class NPC extends GameCharacter {
 							return UtilText.returnStringAtRandom(
 									"That's right slut, take my cock! Your ass belongs to me!",
 									"What a horny bitch! Take my cock you filthy little butt-slut!",
-									"You feel that fuck toy?! My cock sinking deep into your slutty little ass?!");
+									"You feel that, fuck toy?! Do you feel my  cock sinking deep into your slutty little ass?!");
 						case SUB_EAGER:
 							return UtilText.returnStringAtRandom(
 									"Yes! Use my cock! I love your ass!",
@@ -1630,7 +1658,7 @@ public abstract class NPC extends GameCharacter {
 							return UtilText.returnStringAtRandom(
 									"That's right bitch, feel my [npc.tail] pushing deep into your slutty ass!",
 									"What a horny slut! Now moan for me as I fuck your ass with my tail!",
-									"You feel that fuck toy?! My [npc.tail] sinking deep into your slutty little ass?!");
+									"You feel that, fuck toy?! Do you feel my  [npc.tail] sinking deep into your slutty little ass?!");
 						case SUB_EAGER:
 							return UtilText.returnStringAtRandom(
 									"Yes! Use my [npc.tail]! I love your ass!",
@@ -1948,7 +1976,7 @@ public abstract class NPC extends GameCharacter {
 							return UtilText.returnStringAtRandom(
 									"That's right slut, take my cock! Feel it pushing deep into your nipple!",
 									"What a horny bitch! Taking my cock deep into your tit like a slut!",
-									"You feel that fuck toy?! My cock sinking deep into your slutty little nipple?!");
+									"You feel that, fuck toy?! Do you feel my  cock sinking deep into your slutty little nipple?!");
 						case SUB_EAGER:
 							return UtilText.returnStringAtRandom(
 									"Yes! Use my cock! I love your tits!",
@@ -1986,7 +2014,7 @@ public abstract class NPC extends GameCharacter {
 							return UtilText.returnStringAtRandom(
 									"That's right slut, take my [npc.tail]! Feel it pushing deep into your nipple!",
 									"What a horny bitch! Taking my [npc.tail] deep into your tit like a slut!",
-									"You feel that fuck toy?! My [npc.tail] sinking deep into your slutty little nipple?!");
+									"You feel that, fuck toy?! Do you feel my  [npc.tail] sinking deep into your slutty little nipple?!");
 						case SUB_EAGER:
 							return UtilText.returnStringAtRandom(
 									"Yes! Use my [npc.tail]! I love your tits!",
@@ -3002,7 +3030,7 @@ public abstract class NPC extends GameCharacter {
 								return UtilText.returnStringAtRandom(
 										"That's right slut, take my cock! Your pussy belongs to me!",
 										"What a horny bitch! Take my cock you slut!",
-										"You feel that fuck toy?! My cock sinking deep into your slutty little cunt?!");
+										"You feel that, fuck toy?! Do you feel my  cock sinking deep into your slutty little cunt?!");
 							case SUB_EAGER:
 								return UtilText.returnStringAtRandom(
 										"Yes! Use my cock! I love your pussy!",
@@ -3040,7 +3068,7 @@ public abstract class NPC extends GameCharacter {
 								return UtilText.returnStringAtRandom(
 										"That's right slut, feel my [pc.tail] pushing deep into your worthless little cunt! Your pussy belongs to me!",
 										"What a horny bitch! Now moan for me as I fuck you with my tail!",
-										"You feel that fuck toy?! My [pc.tail] sinking deep into your slutty little cunt?!");
+										"You feel that, fuck toy?! Do you feel my  [pc.tail] sinking deep into your slutty little cunt?!");
 							case SUB_EAGER:
 								return UtilText.returnStringAtRandom(
 										"Yes! Use my [pc.tail]! I love your pussy!",
@@ -3180,7 +3208,7 @@ public abstract class NPC extends GameCharacter {
 							return UtilText.returnStringAtRandom(
 									"That's right slut, take my cock! Your ass belongs to me!",
 									"What a horny bitch! Take my cock you filthy little butt-slut!",
-									"You feel that fuck toy?! My cock sinking deep into your slutty little ass?!");
+									"You feel that, fuck toy?! Do you feel my  cock sinking deep into your slutty little ass?!");
 						case SUB_EAGER:
 							return UtilText.returnStringAtRandom(
 									"Yes! Use my cock! I love your ass!",
@@ -3218,7 +3246,7 @@ public abstract class NPC extends GameCharacter {
 							return UtilText.returnStringAtRandom(
 									"That's right bitch, feel my [pc.tail] pushing deep into your slutty ass!",
 									"What a horny slut! Now moan for me as I fuck your ass with my tail!",
-									"You feel that fuck toy?! My [pc.tail] sinking deep into your slutty little ass?!");
+									"You feel that, fuck toy?! Do you feel my  [pc.tail] sinking deep into your slutty little ass?!");
 						case SUB_EAGER:
 							return UtilText.returnStringAtRandom(
 									"Yes! Use my [pc.tail]! I love your ass!",
@@ -3534,7 +3562,7 @@ public abstract class NPC extends GameCharacter {
 							return UtilText.returnStringAtRandom(
 									"That's right slut, take my cock! Feel it pushing deep into your nipple!",
 									"What a horny bitch! Taking my cock deep into your tit like a slut!",
-									"You feel that fuck toy?! My cock sinking deep into your slutty little nipple?!");
+									"You feel that, fuck toy?! Do you feel my  cock sinking deep into your slutty little nipple?!");
 						case SUB_EAGER:
 							return UtilText.returnStringAtRandom(
 									"Yes! Use my cock! I love your tits!",
@@ -3572,7 +3600,7 @@ public abstract class NPC extends GameCharacter {
 							return UtilText.returnStringAtRandom(
 									"That's right slut, take my [pc.tail]! Feel it pushing deep into your nipple!",
 									"What a horny bitch! Taking my [pc.tail] deep into your tit like a slut!",
-									"You feel that fuck toy?! My [pc.tail] sinking deep into your slutty little nipple?!");
+									"You feel that, fuck toy?! Do you feel my  [pc.tail] sinking deep into your slutty little nipple?!");
 						case SUB_EAGER:
 							return UtilText.returnStringAtRandom(
 									"Yes! Use my [pc.tail]! I love your tits!",
